@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "task": "cold_create_to_first_command",
+  "method": {
+    "first_command": "echo ok",
+    "verify_command": "uname -a",
+    "replicates_requested": 5,
+    "readiness": {
+      "attempts": 40,
+      "gap_ms": 250,
+      "probe_timeout_ms": 2000
+    },
+    "definitions": {
+      "spawn_ms": "t0 (monotonic, before create) until the provider's create call returns a handle",
+      "cold_start_ms": "headline TTFR: t0 until the first `echo ok` exits 0",
+      "time_to_first_exec_ms": "create returned until the first `echo ok` exits 0",
+      "teardown_ms": "wall time of the provider's destroy call"
+    }
+  },
+  "host": {
+    "platform": "darwin 27.0.0",
+    "runtime": "bun 1.2.19",
+    "timezone": "America/New_York",
+    "note": "Numbers include network round trips from this host."
+  },
+  "started_at_utc": "2026-11-12T08:53:01.864Z",
+  "finished_at_utc": "2026-11-12T08:53:10.857Z",
+  "providers": [
+    {
+      "id": "freestyle",
+      "env_vars": [
+        "FREESTYLE_API_KEY"
+      ],
+      "requires_payment_method": false,
+      "note": "Created with an empty firewall (no network), matching Cloudflare's enableInternet: false.",
+      "status": "measured",
+      "reason": null,
+      "replicates": [
+        {
+          "index": 1,
+          "ok": true,
+          "image": "freestyle default VM image",
+          "spawn_ms": 1272,
+          "cold_start_ms": 1572.1,
+          "time_to_first_exec_ms": 300.2,
+          "verify_ms": 320.4,
+          "teardown_ms": 362.9,
+          "first_command_stdout": "ok",
+          "readiness_attempts": 1,
+          "error": null,
+          "teardown_error": null
+        },
+        {
+          "index": 2,
+          "ok": true,
+          "image": "freestyle default VM image",
+          "spawn_ms": 659.6,
+          "cold_start_ms": 975.6,
+          "time_to_first_exec_ms": 316.1,
+          "verify_ms": 306,
+          "teardown_ms": 379.3,
+          "first_command_stdout": "ok",
+          "readiness_attempts": 1,
+          "error": null,
+          "teardown_error": null
+        },
+        {
+          "index": 3,
+          "ok": true,
+          "image": "freestyle default VM image",
+          "spawn_ms": 726.6,
+          "cold_start_ms": 1023.4,
+          "time_to_first_exec_ms": 296.8,
+          "verify_ms": 303.4,
+          "teardown_ms": 372,
+          "first_command_stdout": "ok",
+          "readiness_attempts": 1,
+          "error": null,
+          "teardown_error": null
+        },
+        {
+          "index": 4,
+          "ok": true,
+          "image": "freestyle default VM image",
+          "spawn_ms": 645.6,
+          "cold_start_ms": 949.7,
+          "time_to_first_exec_ms": 304,
+          "verify_ms": 312.7,
+          "teardown_ms": 455.7,
+          "first_command_stdout": "ok",
+          "readiness_attempts": 1,
+          "error": null,
+          "teardown_error": null
+        },
+        {
+          "index": 5,
+          "ok": true,
+          "image": "freestyle default VM image",
+          "spawn_ms": 590.4,
+          "cold_start_ms": 896.6,
+          "time_to_first_exec_ms": 306.1,
+          "verify_ms": 317.9,
+          "teardown_ms": 444.1,
+          "first_command_stdout": "ok",
+          "readiness_attempts": 1,
+          "error": null,
+          "teardown_error": null
+        }
+      ],
+      "summary": {
+        "n_ok": 5,
+        "n_fail": 0,
+        "cold_start_ms": {
+          "n": 5,
+          "min": 896.6,
+          "p50": 975.6,
+          "max": 1572.1
+        },
+        "spawn_ms": {
+          "n": 5,
+          "min": 590.4,
+          "p50": 659.6,
+          "max": 1272
+        },
+        "time_to_first_exec_ms": {
+          "n": 5,
+          "min": 296.8,
+          "p50": 304,
+          "max": 316.1
+        },
+        "teardown_ms": {
+          "n": 5,
+          "min": 362.9,
+          "p50": 379.3,
+          "max": 455.7
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+.env
+node_modules/
+.env.*
+.dev.vars
+cloudflare/.wrangler/
+cloudflare/node_modules/
+.DS_Store
+HANDOFF.md
+git.md
+AGENTS.md
+CLAUDE.md

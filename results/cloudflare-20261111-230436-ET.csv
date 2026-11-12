@@ -1,0 +1,6 @@
+provider,status,replicate,ok,spawn_ms,cold_start_ms,time_to_first_exec_ms,teardown_ms,error,cold_start_p50_ms,cold_start_min_ms,cold_start_max_ms
+cloudflare,measured,1,true,716.3,888.4,172,227.7,,483,467.1,888.4
+cloudflare,measured,2,true,301.4,478.2,176.8,198.8,,483,467.1,888.4
+cloudflare,measured,3,true,310.7,483,172.3,243.7,,483,467.1,888.4
+cloudflare,measured,4,true,403.5,606.1,202.5,235,,483,467.1,888.4
+cloudflare,measured,5,true,297.7,467.1,169.4,261.3,,483,467.1,888.4

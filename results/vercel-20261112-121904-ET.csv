@@ -1,0 +1,6 @@
+provider,status,replicate,ok,spawn_ms,cold_start_ms,time_to_first_exec_ms,teardown_ms,error,cold_start_p50_ms,cold_start_min_ms,cold_start_max_ms
+vercel,measured,1,true,764,1067.1,303.2,311.2,,661.9,631.9,1067.1
+vercel,measured,2,true,362,631.9,269.9,467,,661.9,631.9,1067.1
+vercel,measured,3,true,358.6,637.8,279.2,387.9,,661.9,631.9,1067.1
+vercel,measured,4,true,385.1,661.9,276.8,333,,661.9,631.9,1067.1
+vercel,measured,5,true,371.5,698.8,327.2,305.7,,661.9,631.9,1067.1

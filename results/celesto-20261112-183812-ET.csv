@@ -1,0 +1,6 @@
+provider,status,replicate,ok,spawn_ms,cold_start_ms,time_to_first_exec_ms,teardown_ms,error,cold_start_p50_ms,cold_start_min_ms,cold_start_max_ms
+celesto,measured,1,true,2464.1,17304,14839.9,833.5,,6938.5,6030.2,17304
+celesto,measured,2,true,1572.7,7330.1,5757.4,707.3,,6938.5,6030.2,17304
+celesto,measured,3,true,1554.6,6030.2,4475.6,696.5,,6938.5,6030.2,17304
+celesto,measured,4,true,1799.4,6938.5,5139.1,764,,6938.5,6030.2,17304
+celesto,measured,5,true,1569.9,6104.3,4534.4,695.5,,6938.5,6030.2,17304

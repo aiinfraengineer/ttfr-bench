@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "task": "cold_create_to_first_command",
+  "method": {
+    "first_command": "echo ok",
+    "verify_command": "uname -a",
+    "replicates_requested": 5,
+    "readiness": {
+      "attempts": 40,
+      "gap_ms": 250,
+      "probe_timeout_ms": 2000
+    },
+    "definitions": {
+      "spawn_ms": "t0 (monotonic, before create) until the provider's create call returns a handle",
+      "cold_start_ms": "headline TTFR: t0 until the first `echo ok` exits 0",
+      "time_to_first_exec_ms": "create returned until the first `echo ok` exits 0",
+      "teardown_ms": "wall time of the provider's destroy call"
+    }
+  },
+  "host": {
+    "platform": "darwin 27.0.0",
+    "runtime": "bun 1.2.19",
+    "timezone": "America/New_York",
+    "note": "Numbers include network round trips from this host."
+  },
+  "started_at_utc": "2026-11-12T08:56:23.169Z",
+  "finished_at_utc": "2026-11-12T08:56:35.653Z",
+  "providers": [
+    {
+      "id": "tensorlake",
+      "env_vars": [
+        "TENSORLAKE_API_KEY"
+      ],
+      "requires_payment_method": false,
+      "note": "REST API (the TS SDK breaks under Bun). POST /sandboxes waits until running by default, so spawn_ms covers boot. Free tier allows 1 concurrent sandbox.",
+      "status": "measured",
+      "reason": null,
+      "replicates": [
+        {
+          "index": 1,
+          "ok": true,
+          "image": "tensorlake default image (tensorlake/ubuntu-minimal)",
+          "spawn_ms": 1372.2,
+          "cold_start_ms": 2490,
+          "time_to_first_exec_ms": 1117.8,
+          "verify_ms": 260.6,
+          "teardown_ms": 226,
+          "first_command_stdout": "ok",
+          "readiness_attempts": 1,
+          "error": null,
+          "teardown_error": null
+        },
+        {
+          "index": 2,
+          "ok": true,
+          "image": "tensorlake default image (tensorlake/ubuntu-minimal)",
+          "spawn_ms": 876.6,
+          "cold_start_ms": 1939.5,
+          "time_to_first_exec_ms": 1062.8,
+          "verify_ms": 238.2,
+          "teardown_ms": 220.8,
+          "first_command_stdout": "ok",
+          "readiness_attempts": 1,
+          "error": null,
+          "teardown_error": null
+        },
+        {
+          "index": 3,
+          "ok": true,
+          "image": "tensorlake default image (tensorlake/ubuntu-minimal)",
+          "spawn_ms": 851.4,
+          "cold_start_ms": 1914.4,
+          "time_to_first_exec_ms": 1063,
+          "verify_ms": 229.6,
+          "teardown_ms": 223.3,
+          "first_command_stdout": "ok",
+          "readiness_attempts": 1,
+          "error": null,
+          "teardown_error": null
+        },
+        {
+          "index": 4,
+          "ok": true,
+          "image": "tensorlake default image (tensorlake/ubuntu-minimal)",
+          "spawn_ms": 842.3,
+          "cold_start_ms": 1895.1,
+          "time_to_first_exec_ms": 1052.8,
+          "verify_ms": 235.9,
+          "teardown_ms": 221.6,
+          "first_command_stdout": "ok",
+          "readiness_attempts": 1,
+          "error": null,
+          "teardown_error": null
+        },
+        {
+          "index": 5,
+          "ok": true,
+          "image": "tensorlake default image (tensorlake/ubuntu-minimal)",
+          "spawn_ms": 851.2,
+          "cold_start_ms": 1918.8,
+          "time_to_first_exec_ms": 1067.6,
+          "verify_ms": 249.1,
+          "teardown_ms": 218.9,
+          "first_command_stdout": "ok",
+          "readiness_attempts": 1,
+          "error": null,
+          "teardown_error": null
+        }
+      ],
+      "summary": {
+        "n_ok": 5,
+        "n_fail": 0,
+        "cold_start_ms": {
+          "n": 5,
+          "min": 1895.1,
+          "p50": 1918.8,
+          "max": 2490
+        },
+        "spawn_ms": {
+          "n": 5,
+          "min": 842.3,
+          "p50": 851.4,
+          "max": 1372.2
+        },
+        "time_to_first_exec_ms": {
+          "n": 5,
+          "min": 1052.8,
+          "p50": 1063,
+          "max": 1117.8
+        },
+        "teardown_ms": {
+          "n": 5,
+          "min": 218.9,
+          "p50": 221.6,
+          "max": 226
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+provider,status,replicate,ok,spawn_ms,cold_start_ms,time_to_first_exec_ms,teardown_ms,error,cold_start_p50_ms,cold_start_min_ms,cold_start_max_ms
+fly-sprites,measured,1,true,433,623.2,190.2,628.6,,623.2,504.5,746.1
+fly-sprites,measured,2,true,558.3,746.1,187.8,1853,,623.2,504.5,746.1
+fly-sprites,measured,3,true,307.7,504.5,196.8,1043.7,,623.2,504.5,746.1
+fly-sprites,measured,4,true,504,692.8,188.8,728,,623.2,504.5,746.1
+fly-sprites,measured,5,true,431.6,611,179.4,3419.1,,623.2,504.5,746.1

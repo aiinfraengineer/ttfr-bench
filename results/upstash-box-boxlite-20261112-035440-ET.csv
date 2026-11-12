@@ -1,0 +1,11 @@
+provider,status,replicate,ok,spawn_ms,cold_start_ms,time_to_first_exec_ms,teardown_ms,error,cold_start_p50_ms,cold_start_min_ms,cold_start_max_ms
+upstash-box,measured,1,true,3464.2,3748.4,284.2,499.9,,5019.3,2756.1,11667.4
+upstash-box,measured,2,true,7111.1,7388.8,277.7,1318.2,,5019.3,2756.1,11667.4
+upstash-box,measured,3,true,11395.9,11667.4,271.6,2651.6,,5019.3,2756.1,11667.4
+upstash-box,measured,4,true,4742.8,5019.3,276.5,1760.9,,5019.3,2756.1,11667.4
+upstash-box,measured,5,true,2488.1,2756.1,268,1685,,5019.3,2756.1,11667.4
+boxlite,measured,1,true,2683.7,4428.2,1744.5,286.1,,4067.3,3752.2,4428.2
+boxlite,measured,2,true,2289.8,3752.2,1462.4,315.9,,4067.3,3752.2,4428.2
+boxlite,measured,3,true,2349.4,4067.3,1717.8,283.4,,4067.3,3752.2,4428.2
+boxlite,measured,4,true,2093.9,3831.5,1737.6,560.2,,4067.3,3752.2,4428.2
+boxlite,measured,5,true,2336.8,4088.9,1752.1,295.2,,4067.3,3752.2,4428.2

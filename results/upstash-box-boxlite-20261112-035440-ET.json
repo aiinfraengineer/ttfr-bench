@@ -1,0 +1,250 @@
+{
+  "schema_version": 1,
+  "task": "cold_create_to_first_command",
+  "method": {
+    "first_command": "echo ok",
+    "verify_command": "uname -a",
+    "replicates_requested": 5,
+    "readiness": {
+      "attempts": 40,
+      "gap_ms": 250,
+      "probe_timeout_ms": 2000
+    },
+    "definitions": {
+      "spawn_ms": "t0 (monotonic, before create) until the provider's create call returns a handle",
+      "cold_start_ms": "headline TTFR: t0 until the first `echo ok` exits 0",
+      "time_to_first_exec_ms": "create returned until the first `echo ok` exits 0",
+      "teardown_ms": "wall time of the provider's destroy call"
+    }
+  },
+  "host": {
+    "platform": "darwin 27.0.0",
+    "runtime": "bun 1.2.19",
+    "timezone": "America/New_York",
+    "note": "Numbers include network round trips from this host."
+  },
+  "started_at_utc": "2026-11-12T08:54:40.327Z",
+  "finished_at_utc": "2026-11-12T08:55:49.959Z",
+  "providers": [
+    {
+      "id": "upstash-box",
+      "env_vars": [
+        "UPSTASH_BOX_API_KEY"
+      ],
+      "requires_payment_method": false,
+      "note": "SDK Box.create() waits for ready: if POST /v2/box returns 'creating' it polls GET /v2/box/:id every 2s, so spawn_ms may be quantized to ~2s steps.",
+      "status": "measured",
+      "reason": null,
+      "replicates": [
+        {
+          "index": 1,
+          "ok": true,
+          "image": "upstash box default runtime (Debian 12 + Node)",
+          "spawn_ms": 3464.2,
+          "cold_start_ms": 3748.4,
+          "time_to_first_exec_ms": 284.2,
+          "verify_ms": 286,
+          "teardown_ms": 499.9,
+          "first_command_stdout": "ok",
+          "readiness_attempts": 1,
+          "error": null,
+          "teardown_error": null
+        },
+        {
+          "index": 2,
+          "ok": true,
+          "image": "upstash box default runtime (Debian 12 + Node)",
+          "spawn_ms": 7111.1,
+          "cold_start_ms": 7388.8,
+          "time_to_first_exec_ms": 277.7,
+          "verify_ms": 276.1,
+          "teardown_ms": 1318.2,
+          "first_command_stdout": "ok",
+          "readiness_attempts": 1,
+          "error": null,
+          "teardown_error": null
+        },
+        {
+          "index": 3,
+          "ok": true,
+          "image": "upstash box default runtime (Debian 12 + Node)",
+          "spawn_ms": 11395.9,
+          "cold_start_ms": 11667.4,
+          "time_to_first_exec_ms": 271.6,
+          "verify_ms": 282.4,
+          "teardown_ms": 2651.6,
+          "first_command_stdout": "ok",
+          "readiness_attempts": 1,
+          "error": null,
+          "teardown_error": null
+        },
+        {
+          "index": 4,
+          "ok": true,
+          "image": "upstash box default runtime (Debian 12 + Node)",
+          "spawn_ms": 4742.8,
+          "cold_start_ms": 5019.3,
+          "time_to_first_exec_ms": 276.5,
+          "verify_ms": 282.5,
+          "teardown_ms": 1760.9,
+          "first_command_stdout": "ok",
+          "readiness_attempts": 1,
+          "error": null,
+          "teardown_error": null
+        },
+        {
+          "index": 5,
+          "ok": true,
+          "image": "upstash box default runtime (Debian 12 + Node)",
+          "spawn_ms": 2488.1,
+          "cold_start_ms": 2756.1,
+          "time_to_first_exec_ms": 268,
+          "verify_ms": 278.4,
+          "teardown_ms": 1685,
+          "first_command_stdout": "ok",
+          "readiness_attempts": 1,
+          "error": null,
+          "teardown_error": null
+        }
+      ],
+      "summary": {
+        "n_ok": 5,
+        "n_fail": 0,
+        "cold_start_ms": {
+          "n": 5,
+          "min": 2756.1,
+          "p50": 5019.3,
+          "max": 11667.4
+        },
+        "spawn_ms": {
+          "n": 5,
+          "min": 2488.1,
+          "p50": 4742.8,
+          "max": 11395.9
+        },
+        "time_to_first_exec_ms": {
+          "n": 5,
+          "min": 268,
+          "p50": 276.5,
+          "max": 284.2
+        },
+        "teardown_ms": {
+          "n": 5,
+          "min": 499.9,
+          "p50": 1685,
+          "max": 2651.6
+        }
+      }
+    },
+    {
+      "id": "boxlite",
+      "env_vars": [
+        "BOXLITE_API_KEY"
+      ],
+      "requires_payment_method": false,
+      "note": "BoxLite Cloud on its 'base' image. Cloud create() returns with the box already running; start() is a no-op confirm.",
+      "status": "measured",
+      "reason": null,
+      "replicates": [
+        {
+          "index": 1,
+          "ok": true,
+          "image": "boxlite cloud 'base' image",
+          "spawn_ms": 2683.7,
+          "cold_start_ms": 4428.2,
+          "time_to_first_exec_ms": 1744.5,
+          "verify_ms": 1723.3,
+          "teardown_ms": 286.1,
+          "first_command_stdout": "ok",
+          "readiness_attempts": 1,
+          "error": null,
+          "teardown_error": null
+        },
+        {
+          "index": 2,
+          "ok": true,
+          "image": "boxlite cloud 'base' image",
+          "spawn_ms": 2289.8,
+          "cold_start_ms": 3752.2,
+          "time_to_first_exec_ms": 1462.4,
+          "verify_ms": 1440.4,
+          "teardown_ms": 315.9,
+          "first_command_stdout": "ok",
+          "readiness_attempts": 1,
+          "error": null,
+          "teardown_error": null
+        },
+        {
+          "index": 3,
+          "ok": true,
+          "image": "boxlite cloud 'base' image",
+          "spawn_ms": 2349.4,
+          "cold_start_ms": 4067.3,
+          "time_to_first_exec_ms": 1717.8,
+          "verify_ms": 1413.7,
+          "teardown_ms": 283.4,
+          "first_command_stdout": "ok",
+          "readiness_attempts": 1,
+          "error": null,
+          "teardown_error": null
+        },
+        {
+          "index": 4,
+          "ok": true,
+          "image": "boxlite cloud 'base' image",
+          "spawn_ms": 2093.9,
+          "cold_start_ms": 3831.5,
+          "time_to_first_exec_ms": 1737.6,
+          "verify_ms": 1758.8,
+          "teardown_ms": 560.2,
+          "first_command_stdout": "ok",
+          "readiness_attempts": 1,
+          "error": null,
+          "teardown_error": null
+        },
+        {
+          "index": 5,
+          "ok": true,
+          "image": "boxlite cloud 'base' image",
+          "spawn_ms": 2336.8,
+          "cold_start_ms": 4088.9,
+          "time_to_first_exec_ms": 1752.1,
+          "verify_ms": 1482,
+          "teardown_ms": 295.2,
+          "first_command_stdout": "ok",
+          "readiness_attempts": 1,
+          "error": null,
+          "teardown_error": null
+        }
+      ],
+      "summary": {
+        "n_ok": 5,
+        "n_fail": 0,
+        "cold_start_ms": {
+          "n": 5,
+          "min": 3752.2,
+          "p50": 4067.3,
+          "max": 4428.2
+        },
+        "spawn_ms": {
+          "n": 5,
+          "min": 2093.9,
+          "p50": 2336.8,
+          "max": 2683.7
+        },
+        "time_to_first_exec_ms": {
+          "n": 5,
+          "min": 1462.4,
+          "p50": 1737.6,
+          "max": 1752.1
+        },
+        "teardown_ms": {
+          "n": 5,
+          "min": 283.4,
+          "p50": 295.2,
+          "max": 560.2
+        }
+      }
+    }
+  ]
+}

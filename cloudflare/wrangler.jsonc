@@ -1,0 +1,21 @@
+// Bench Worker for Cloudflare sandboxes. Follows the official
+// "Run a Linux command" guide (developers.cloudflare.com/sandbox/get-started/).
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ttfr-bench",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-11-11",
+  "observability": { "enabled": true },
+  "containers": [
+    {
+      "class_name": "BenchSandbox",
+      "scheduling_policy": "durable_object"
+    }
+  ],
+  "durable_objects": {
+    "bindings": [{ "class_name": "BenchSandbox", "name": "SANDBOX" }]
+  },
+  "exports": {
+    "BenchSandbox": { "type": "durable-object", "storage": "sqlite" }
+  }
+}

@@ -1,0 +1,6 @@
+provider,status,replicate,ok,spawn_ms,cold_start_ms,time_to_first_exec_ms,teardown_ms,error,cold_start_p50_ms,cold_start_min_ms,cold_start_max_ms
+freestyle,measured,1,true,1272,1572.1,300.2,362.9,,975.6,896.6,1572.1
+freestyle,measured,2,true,659.6,975.6,316.1,379.3,,975.6,896.6,1572.1
+freestyle,measured,3,true,726.6,1023.4,296.8,372,,975.6,896.6,1572.1
+freestyle,measured,4,true,645.6,949.7,304,455.7,,975.6,896.6,1572.1
+freestyle,measured,5,true,590.4,896.6,306.1,444.1,,975.6,896.6,1572.1
