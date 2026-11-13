@@ -150,4 +150,4 @@ Errors are copied exactly as the SDK or API returned them.
 - One client location and N=5. It ranks wide gaps, not close ones.
 - Skips and failures are not zeros.
 
-Published at https://aiinfraengineer.pages.dev/benchmarks/ttfr/ with the raw JSON.
+Published at https://infraengineer.dev/benchmarks/ttfr/ with the raw JSON.

@@ -4,7 +4,7 @@ A small runner for **one** task: cold create → first successful command (TTFR)
 
 Each provider runs on its own default image. Inspired by [StarSling's sandbox benchmarks](https://github.com/starslingdev/hpc-sandbox-benchmarks).
 
-Results: [RESULTS.md](RESULTS.md) and https://aiinfraengineer.pages.dev/benchmarks/ttfr/
+Results: [RESULTS.md](RESULTS.md) and https://infraengineer.dev/benchmarks/ttfr/
 
 ## Method
 
